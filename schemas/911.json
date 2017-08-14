@@ -1,0 +1,11 @@
+[{"param":"county","name":"county","dt":"string","nullable":"False"},
+{"param":"state","name":"state","dt":"string","nullable":"False"},
+{"pos":"0","name":"lat","dt":"double","nullable":"True" },
+{"pos":"1","name":"lng","dt":"double","nullable":"True" },
+{"pos":"2","name":"desc","dt":"string","nullable":"True" },
+{"pos":"3","name":"zip","dt":"string","nullable":"True" },
+{"pos":"4","name":"title","dt":"string","nullable":"True" },
+{"pos":"5","name":"time","dt":"timestamp","nullable":"True" },
+{"pos":"6","name":"twp","dt":"string","nullable":"True" },
+{"pos":"7","name":"addr","dt":"string","nullable":"True" },
+{"pos":"8","name":"e","dt":"int","nullable":"True" }]
