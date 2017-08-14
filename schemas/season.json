@@ -1,4 +1,4 @@
-[{"param":"year","name":"season","dt":"int","nullable":"Flase"},
+[{"param":"year","name":"season","dt":"int","nullable":"False"},
 {"id":"001","name":"team_key","dt":"string","nullable":"False"},
 {"id":"002","name":"team_name","dt":"string","nullable":"False"},
 {"id":"003","name":"games","dt":"int","nullable":"False"},
@@ -28,5 +28,5 @@
 {"id":"027","name":"opp_chances_pp","dt":"int","nullable":"False"},
 {"id":"028","name":"opp_goals","dt":"int","nullable":"False"},
 {"id":"029","name":"pen_kill_pct","dt":"float","nullable":"False"},
-{"id":"030","name":"pen_min_per_game","dt":"float","nullable":"False"},		
+{"id":"030","name":"pen_min_per_game","dt":"float","nullable":"False"},
 {"id":"031","name":"pen_min_per_game_opp","dt":"float","nullable":"False"}]
