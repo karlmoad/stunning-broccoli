@@ -44,7 +44,7 @@ def parser(line):
             item = f["parsing"]
             if item.get("param"):
                 o.append(self.formatter(item, params[item["param"]]))
-            elif item.get("id"):
+            elif item.get("field_id"):
                 o.append(self.formatter(item, fields[item["field_id"]]))
     return tuple(o)
 
@@ -60,8 +60,7 @@ def formatter(spec, value):
 
 def SpkSchemaBuilder(schema):
     fbuilder = list()
-    for f in schema["fields"]:
-        item = f["parsing"]
+    for item in schema["fields"]:
         # derive spk sql data type
         dt = None
         if item["dt"] == "int":
@@ -72,10 +71,10 @@ def SpkSchemaBuilder(schema):
             dt = StringType()
 
         # find if field is nullable
-        nullable = f["nullable"] == "True"
+        nullable = item["nullable"] == "True"
 
         # build the spk sql field spec
-        fbuilder.append(StructField(f["name"], dt, nullable))
+        fbuilder.append(StructField(item["name"], dt, nullable))
 
     return StructType(fbuilder)
 
