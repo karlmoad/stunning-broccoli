@@ -43,9 +43,9 @@ def parser(line):
         if f.get("parsing"):
             item = f["parsing"]
             if item.get("param"):
-                o.append(self.formatter(item, params[item["param"]]))
+                o.append(formatter(item, params[item["param"]]))
             elif item.get("field_id"):
-                o.append(self.formatter(item, fields[item["field_id"]]))
+                o.append(formatter(item, fields[item["field_id"]]))
     return tuple(o)
 
 
