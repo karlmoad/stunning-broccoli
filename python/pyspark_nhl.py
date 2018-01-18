@@ -10,17 +10,21 @@ params = {"year":"2017"}
 def parser(line):
 	o = list()
 
+	spec = schema["parser"]
+	fldm = int(spec["field_id_size"])
+	lenm = int(spec["field_length_size"])
+	startChar = spec["record_start_char"]
+	endChar = spec["record_end_char"]
+	numFields = int(spec["field_count"])
 
 	# parse the line into fields
-	if not line[0:1] == "{":
+	if not line[0:1] == startChar:
 		raise Exception("Not properly Formatted")
 	p = 1
-	fldm = 3
-	lenm = 4
 
 	fields = dict()
 	while True:
-		if line[p:p+1] == "}":
+		if line[p:p+1] == endChar:
 				break
 
 		field_id = line[p:p+fldm]
@@ -35,12 +39,13 @@ def parser(line):
 
 
 	#apply schema
-	for item in schema:
-		if item.get("param"):
-			o.append(formatter(item,params[item["param"]]))
-		elif item.get("id"):
-			o.append(formatter(item,fields[item["id"]]))
-
+	for f in schema:
+        if f.get("parsing"):
+            item = f["parsing"]
+            if item.get("param"):
+                o.append(self.formatter(item, params[item["param"]]))
+            elif item.get("id"):
+                o.append(self.formatter(item, fields[item["field_id"]]))
 	return tuple(o)
 
 def formatter(spec, value):
