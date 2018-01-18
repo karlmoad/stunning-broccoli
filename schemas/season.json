@@ -1,32 +1,278 @@
-[{"param":"year","name":"season","dt":"int","nullable":"False"},
-{"id":"001","name":"team_key","dt":"string","nullable":"False"},
-{"id":"002","name":"team_name","dt":"string","nullable":"False"},
-{"id":"003","name":"games","dt":"int","nullable":"False"},
-{"id":"004","name":"points","dt":"int","nullable":"False"},
-{"id":"005","name":"wins","dt":"int","nullable":"False"},
-{"id":"006","name":"losses","dt":"int","nullable":"False"},
-{"id":"007","name":"goals","dt":"int","nullable":"False"},
-{"id":"008","name":"shots","dt":"int","nullable":"False"},
-{"id":"009","name":"power_play_pct","dt":"float","nullable":"False"},
-{"id":"010","name":"losses_ot","dt":"int","nullable":"False"},
-{"id":"011","name":"losses_shootout","dt":"int","nullable":"False"},
-{"id":"012","name":"wins_shootout","dt":"int","nullable":"False"},
-{"id":"013","name":"goals_pp","dt":"int","nullable":"False"},
-{"id":"014","name":"shot_pct","dt":"float","nullable":"False"},
-{"id":"015","name":"sos","dt":"float","nullable":"False"},
-{"id":"016","name":"average_age","dt":"float","nullable":"False"},
-{"id":"017","name":"chances_pp","dt":"int","nullable":"False"},
-{"id":"018","name":"goals_sh","dt":"int","nullable":"False"},
-{"id":"019","name":"save_pct","dt":"float","nullable":"False"},
-{"id":"020","name":"points_pct","dt":"float","nullable":"False"},
-{"id":"021","name":"total_goals_per_game","dt":"float","nullable":"False"},
-{"id":"022","name":"shots_against","dt":"int","nullable":"False"},
-{"id":"023","name":"pdo","dt":"float","nullable":"False"},
-{"id":"024","name":"srs","dt":"float","nullable":"False"},
-{"id":"025","name":"opp_goals_sh","dt":"int","nullable":"False"},
-{"id":"026","name":"opp_goals_pp","dt":"int","nullable":"False"},
-{"id":"027","name":"opp_chances_pp","dt":"int","nullable":"False"},
-{"id":"028","name":"opp_goals","dt":"int","nullable":"False"},
-{"id":"029","name":"pen_kill_pct","dt":"float","nullable":"False"},
-{"id":"030","name":"pen_min_per_game","dt":"float","nullable":"False"},
-{"id":"031","name":"pen_min_per_game_opp","dt":"float","nullable":"False"}]
+{
+    "name" : "NHL Hockey Seasons",
+    "origin" : "/system/nhl/data",
+    "path": "/system/nhl/data/seasons",
+    "parser": {
+        "type" : "StackedFieldSpecification",
+        "field_count" : 31,
+        "field_id_size" : 3,
+        "field_length_size" : 4,
+        "record_start_char" : "{",
+        "record_end_char" : "}"
+    },
+    "params": [
+      {
+        "name" : "year",
+        "dt" : "int",
+        "required" : "true"
+      }
+    ],
+    "fields": [
+      {
+        "name": "season",
+        "dt": "int",
+        "nullable": "False",
+        "parsing": {
+          "param": "year"
+        }
+      },
+      {
+        "name": "team_key",
+        "dt": "string",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "001"
+        }
+      },
+      {
+        "name": "team_name",
+        "dt": "string",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "002"
+        }
+      },
+      {
+        "name": "games",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "003"
+        }
+      },
+      {
+        "name": "points",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "004"
+        }
+      },
+      {
+        "name": "wins",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "005"
+        }
+      },
+      {
+        "name": "losses",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "006"
+        }
+      },
+      {
+        "name": "goals",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "007"
+        }
+      },
+      {
+        "name": "shots",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "008"
+        }
+      },
+      {
+        "name": "power_play_pct",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "009"
+        }
+      },
+      {
+        "name": "losses_ot",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "010"
+        }
+      },
+      {
+        "name": "losses_shootout",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "011"
+        }
+      },
+      {
+        "name": "wins_shootout",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "012"
+        }
+      },
+      {
+        "name": "goals_pp",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "013"
+        }
+      },
+      {
+        "name": "shot_pct",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "014"
+        }
+      },
+      {
+        "name": "sos",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "015"
+        }
+      },
+      {
+        "name": "average_age",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "016"
+        }
+      },
+      {
+        "name": "chances_pp",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "017"
+        }
+      },
+      {
+        "name": "goals_sh",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "018"
+        }
+      },
+      {
+        "name": "save_pct",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "019"
+        }
+      },
+      {
+        "name": "points_pct",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "020"
+        }
+      },
+      {
+        "name": "total_goals_per_game",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "021"
+        }
+      },
+      {
+        "name": "shots_against",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "022"
+        }
+      },
+      {
+        "name": "pdo",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "023"
+        }
+      },
+      {
+        "name": "srs",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "024"
+        }
+      },
+      {
+        "name": "opp_goals_sh",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "025"
+        }
+      },
+      {
+        "name": "opp_goals_pp",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "026"
+        }
+      },
+      {
+        "name": "opp_chances_pp",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "027"
+        }
+      },
+      {
+        "name": "opp_goals",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "028"
+        }
+      },
+      {
+        "name": "pen_kill_pct",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "029"
+        }
+      },
+      {
+        "name": "pen_min_per_game",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "030"
+        }
+      },
+      {
+        "name": "pen_min_per_game_opp",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "031"
+        }
+      }
+  ]
+}
