@@ -1,0 +1,38 @@
+CREATE EXTERNAL TABLE NHL_SEASON(
+    YEAR int,
+    SEASON int,
+    TEAM_KEY string,
+    TEAM_NAME string,
+    GAMES int,
+    POINTS int,
+    WINS int,
+    LOSSES int,
+    GOALS int,
+    SHOTS int,
+    POWER_PLAY_PCT float,
+    LOSSESS_OT int,
+    LOSSES_SHOOTOUT int,
+    WINS_SHOOTOUT int,
+    GOALS_PP int,
+    SHOT_PCT float,
+    SOS float,
+    AVERAGE_AGE float,
+    CHANCES_PP int,
+    GOALS_SH int,
+    SAVE_PCT float,
+    POINTS_PCT float,
+    TOTAL_GOALS_PER_GAME float,
+    SHOTS_AGAINST int,
+    PDO float,
+    SRS float,
+    OPP_GOALS_SH int,
+    OPP_GOALS_PP int,
+    OPP_CHANCES_PP int,
+    OPP_GOALS int,
+    PEN_KILL_PCT float,
+    PEN_MIN_PER_GAME float,
+    PEN_MIN_PER_GAME_OPP float
+)
+STORED AS PARQUET
+LOCATION '/system/nhl/data/seasons'
+TBLPROPERTIES ("parquet.compression"="SNAPPY");
