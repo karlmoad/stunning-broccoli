@@ -41,8 +41,8 @@ class stackedformatparser(defaultparser):
             if f.get("parsing"):
                 item = f["parsing"]
                 if item.get("param"):
-                    o.append(self.schema.formatter(item, params[item["param"]]))
+                    o.append(self.schema.formatter(f, params[f["param"]]))
                 elif item.get("id"):
-                    o.append(self.schema.formatter(item, fields[item["field_id"]]))
+                    o.append(self.schema.formatter(f, fields[f["field_id"]]))
 
         return tuple(o)
