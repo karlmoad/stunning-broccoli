@@ -10,7 +10,7 @@ class stackedformatparser(defaultparser):
         if self.schema == null:
             raise Exception("Schema not set")
 
-        spec = self.schema["parser"]
+        spec = self.schema.getParsingSpecification()
         fldm = int(spec["field_id_size"])
         lenm = int(spec["field_length_size"])
         startChar = spec["record_start_char"]
@@ -36,13 +36,13 @@ class stackedformatparser(defaultparser):
         p += fl
         fields[field_id] = field_val
 
-        # apply schema
-        for f in spec.fields:
+        # apply schemas
+        for f in self.schema.getFieldSpecification():
             if f.get("parsing"):
                 item = f["parsing"]
                 if item.get("param"):
-                    o.append(self.formatter(item, params[item["param"]]))
+                    o.append(self.schema.formatter(item, params[item["param"]]))
                 elif item.get("id"):
-                    o.append(self.formatter(item, fields[item["field_id"]]))
+                    o.append(self.schema.formatter(item, fields[item["field_id"]]))
 
         return tuple(o)

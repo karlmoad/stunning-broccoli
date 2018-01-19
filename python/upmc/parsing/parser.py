@@ -1,12 +1,15 @@
 import json
 import stackedformatparser
 import defaultparser
+from schemas import schema
 
 class parser:
 
     def __init__(self, schema):
+        self.schemaName = schema.getName()
         self.config = schema
         self.parsertype = self.evaluate()
+        self.parsertype.setSchema(self.config)
 
     def evaluate(self):
         parsers = {

@@ -38,7 +38,7 @@ def parser(line):
 
         fields[field_id] = field_val
 
-        # apply schema
+        # apply schemas
     for f in schema["fields"]:
         if f.get("parsing"):
             item = f["parsing"]

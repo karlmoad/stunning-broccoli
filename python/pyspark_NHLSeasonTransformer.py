@@ -22,7 +22,7 @@ def main(args):
     global params
     params["year"] = season
 
-    # get the schema structure for the data
+    # get the schemas structure for the data
     global schema
     schema = getSchema(schemaPath)
 
@@ -62,7 +62,7 @@ def parser(line):
         p += fl
         fields[field_id]=field_val
 
-    #apply schema
+    #apply schemas
     for item in schema:
         if item.get("param"):
             o.append(formatter(item,params[item["param"]]))

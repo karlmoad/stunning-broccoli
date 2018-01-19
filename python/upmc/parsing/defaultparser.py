@@ -12,14 +12,3 @@ class defaultparser(object):
         o = list()
         o.append(line)
         return tuple(o)
-
-    def formatter(self, spec, value):
-        if spec["dt"] == "int":
-            return int(value)
-        elif spec["dt"] == "float":
-            return float(value)
-        else:
-            return value
-
-
-
