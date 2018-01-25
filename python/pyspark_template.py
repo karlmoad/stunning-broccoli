@@ -19,11 +19,10 @@ def main(args):
 
 if __name__ == "__main__":
   # Configure Spark context form environment settings
-  conf = SparkConf()  # yes thats it, easy huh
+  conf = SparkConf().setAppName(APP_NAME)  # yes thats it, easy huh
 
-  # Set the app name and create a spark context for use
-  conf.setAppName(APP_NAME) # See variable declared above
-  sc = SparkContext(conf)
+  # create a spark context for use
+  sc = SparkContext(conf=conf)
 
   # Create  SQLContext as well so at start we are basically at the same
   # point as the shell REPL
