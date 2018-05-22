@@ -95,3 +95,25 @@ rdd3 = sc.textFile(input3)
 data3 = rdd3.map(parser)
 
 skaters = sc.union([data1,data2,data3])
+
+skaters_mapped = skaters.map(lambda x: (x[0],x))
+
+skaters_grouped = skaters_mapped.groupByKey();
+
+def evaluatePlayerStats(k,v):
+    int curGoals = 0
+    int curAssists = 0
+    out = list()
+
+    for rec in v:
+        if len(v) == 0:
+            rGoals = int(v[10])
+            rAssists = int(v[11])
+
+            if rGoals > curGoals:
+                out = v
+            elif rGoals <= curGoals and rAssists > curAssists:
+                out = v
+    return tuple(out)
+
+skaters_final = skaters_grouped.map(evaluatePlayerStats)        
