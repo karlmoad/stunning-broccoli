@@ -100,20 +100,23 @@ skaters_mapped = skaters.map(lambda x: (x[0],x))
 
 skaters_grouped = skaters_mapped.groupByKey();
 
-def evaluatePlayerStats(k,v):
+def evaluatePlayerStats(record):
     curGoals = 0
     curAssists = 0
+    key = record[0]
+    recs = list(record[1])
     out = list()
 
-    for rec in v:
-        if len(v) == 0:
-            rGoals = int(v[10])
-            rAssists = int(v[11])
+    for rt in recs:
+        rec = list(rt)
+        if len(rec) == 0:
+            rGoals = int(rec[10])
+            rAssists = int(rec[11])
 
             if rGoals > curGoals:
-                out = v
+                out = rec
             elif rGoals <= curGoals and rAssists > curAssists:
-                out = v
+                out = rec
     return tuple(out)
 
 skaters_final = skaters_grouped.map(evaluatePlayerStats)
