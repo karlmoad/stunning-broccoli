@@ -83,8 +83,8 @@ def SpkSchemaBuilder(schema):
 
     return StructType(fbuilder)
 
-
-
+#----------------------------------------------------------------[Boiler Plate parsing   ^]
+#----------------------------------------------------------------[Group By Logic Example V]
 rdd1 = sc.textFile(input1)
 data1 = rdd1.map(parser)
 
