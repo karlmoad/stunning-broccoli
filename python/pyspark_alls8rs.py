@@ -109,7 +109,7 @@ def evaluatePlayerStats(record):
 
     for r in recs:
         rec = list(r)
-        if len(rec) == 0:
+        if len(rec) == 12:
             rGoals = int(rec[10])
             rAssists = int(rec[11])
 
