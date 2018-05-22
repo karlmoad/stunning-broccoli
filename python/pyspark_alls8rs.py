@@ -50,7 +50,7 @@ def parser(line):
                 if fields.get(item["field_id"]):
                     o.append(formatter(f, fields[item["field_id"]]))
                 else:
-                    o.append(null)
+                    o.append('')
     return tuple(o)
 
 
