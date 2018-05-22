@@ -1,0 +1,111 @@
+{
+    "name" : "NHL Team All Skaters",
+    "origin" : "/system/nhl/data",
+    "path": "/system/nhl/data/seasons",
+    "parser": {
+        "type" : "StackedFieldSpecification",
+        "field_count" : 29,
+        "field_id_size" : 3,
+        "field_length_size" : 4,
+        "record_start_char" : "{",
+        "record_end_char" : "}"
+    },
+    "fields": [
+      {
+        "name": "key",
+        "dt": "string",
+        "nullable": "False",
+        "parsing": {
+          "field_id": "001"
+        }
+      },
+      {
+        "name": "player",
+        "dt": "string",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "002"
+        }
+      },
+      {
+        "name": "pos",
+        "dt": "string",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "003"
+        }
+      },
+      {
+        "name": "age",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "004"
+        }
+      },
+      {
+        "name": "games_played",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "005"
+        }
+      },
+      {
+        "name": "ice_time",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "006"
+        }
+      },
+      {
+        "name": "pen_min",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "008"
+        }
+      },
+      {
+        "name": "points",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "009"
+        }
+      },
+      {
+        "name": "shots",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "010"
+        }
+      },
+      {
+        "name": "shots_pct",
+        "dt": "float",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "011"
+        }
+      },
+      {
+        "name": "goals",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "012"
+        }
+      },
+      {
+        "name": "assists",
+        "dt": "int",
+        "nullable": "False",
+        "parsing" :{
+          "field_id": "017"
+        }
+      }
+  ]
+}
