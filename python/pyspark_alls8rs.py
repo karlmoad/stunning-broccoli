@@ -116,11 +116,11 @@ def evaluatePlayerStats(record):
             if rGoals > curGoals:
                 curGoals = rGoals
                 curAssists = rAssists
-                out = r
+                out = rec
             elif rGoals <= curGoals and rAssists > curAssists:
                 curGoals = rGoals
                 curAssists = rAssists
-                out = r
+                out = rec
 
 
     return tuple(out)
