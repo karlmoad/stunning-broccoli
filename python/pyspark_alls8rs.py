@@ -101,8 +101,8 @@ skaters_mapped = skaters.map(lambda x: (x[0],x))
 skaters_grouped = skaters_mapped.groupByKey();
 
 def evaluatePlayerStats(k,v):
-    int curGoals = 0
-    int curAssists = 0
+    curGoals = 0
+    curAssists = 0
     out = list()
 
     for rec in v:
@@ -116,4 +116,4 @@ def evaluatePlayerStats(k,v):
                 out = v
     return tuple(out)
 
-skaters_final = skaters_grouped.map(evaluatePlayerStats)        
+skaters_final = skaters_grouped.map(evaluatePlayerStats)
