@@ -105,7 +105,7 @@ def evaluatePlayerStats(record):
     curAssists = 0
     key = record[0]
     recs = list(record[1])
-    out
+    out = list()
 
     for rec in recs:
         if len(rec) == 0:
@@ -121,7 +121,7 @@ def evaluatePlayerStats(record):
                 curAssists = rAssists
                 out = rec
 
-                
+
     return tuple(out)
 
 skaters_final = skaters_grouped.map(evaluatePlayerStats)
